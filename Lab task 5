@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+struct EmployeeRecord {
+    char name[10];
+    int age;
+    float salary;
+};
+
+int main() {
+    struct EmployeeRecord x = {"Bipul", 25, 50000.0};
+    struct EmployeeRecord y[5] = {
+        {"Kaysar", 30, 60000.0},
+        {"Sara", 28, 55000.0}
+    };
+    
+    struct EmployeeRecord *p;
+    p = &x;
+
+    
+    cout << "Direct dot (x): " << x.name << " " << x.age << " " << x.salary << endl;
+    cout << "Direct dot (y[0]): " << y[0].name << " " << y[0].age << " " << y[0].salary << endl;
+
+    
+    cout << "Pointer arrow (*p): " << p->name << " " << p->age << " " << p->salary << endl;
+
+    return 0;
+}
